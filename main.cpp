@@ -1,18 +1,24 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 #include <conio.h>
  
 std::string towords(int numb);
  
 int main()
 {
-    int numb=INT_MAX;
+    std::ifstream file("file.txt");
+    getline(file, str);
+    int numb = std::stoi(str);
+    file.close();
+    //int numb=150;
     std::string str=towords(numb);
     std::cout<<numb<<" = "<<str;
     
     getch();
     return EXIT_SUCCESS;
 }
- 
+
 std::string towords(int numb){
     //массив, для определения разряда, в котором находимся(сотни,десятки,еденицы...)
     int osn[11]={0,1,10,100,1000,10000,100000,1000000,10000000,100000000,1000000000};
