@@ -13,7 +13,7 @@ int main()
     std::getline(infile, line);
     int numb = std::stoi(line);
     std::string str = towords(numb);
-    std::cout << numb << " = " << str << "RUB" << std ::endl;
+    std::cout << numb << " = " << str << "  RUB" << std ::endl;
     while (infile >> numb)
     {
         std::string str = towords(numb);
