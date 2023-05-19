@@ -5,16 +5,16 @@
  
 std::string towords(int numb);
  
+
 int main()
 {
-    std::ifstream file("file.txt");
-    getline(file, str);
-    int numb = std::stoi(str);
-    file.close();
-    //int numb=150;
-    std::string str=towords(numb);
-    std::cout<<numb<<" = "<<str;
-    
+    std::ifstream infile("input.txt");
+    std::string line;
+    std::getline(infile, line);
+    int numb = std::stoi(line);
+    std::string str = towords(numb);
+    std::cout << numb << " = " << str;
+
     getch();
     return EXIT_SUCCESS;
 }
