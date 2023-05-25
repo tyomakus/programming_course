@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <conio.h>
+#include <clocale>
  
 std::string towords(int numb);
  
@@ -13,9 +14,17 @@ int main()
     std::getline(infile, line);
     int numb = std::stoi(line);
     std::string str = towords(numb);
-    std::cout << numb << " = " << str;
+    std::cout << numb << " = " << str << "  RUB" << std ::endl;
+    while (infile >> numb)
+    {
+        std::string str = towords(numb);
+        std::cout << numb << " = " << str << "RUB" << std ::endl;
+    }
+
+    infile.close();
 
     getch();
+    setlocale(LC_ALL,"Russian"); 
     return EXIT_SUCCESS;
 }
 
@@ -60,7 +69,7 @@ std::string towords(int numb){
     int n1=numb;
     int cnt=0;
  
-    //подсчет количесива цифр в числе
+    //подсчет количества цифр в числе
     while (numb){
         numb/=10;
         ++cnt;
